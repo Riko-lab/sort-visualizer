@@ -27,4 +27,4 @@ You can download the repository locally and run the html file with a local serve
 
 #### Improvments
 
-Graphic, code efficiency
+Graphic, code efficiency, functionality
