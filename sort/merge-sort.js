@@ -1,10 +1,14 @@
 export { mergeSortArray };
 
 
-function mergeSortArray(myArray) {
+async function mergeSortArray(myArray) {
     let arrayLength = myArray.length;
     let graph = document.getElementById('graph-cnt').children;
-    sort(myArray, 0, arrayLength - 1, graph);
+    await sort(myArray, 0, arrayLength - 1, graph);
+    for(let i = 0; i < arrayLength; i++) {
+        await sleep(1);
+        graph[i].style.setProperty('background-color', 'lightBlue')
+    }
 }
 
 async function sort(myArray, p, r, graph) {
@@ -47,24 +51,17 @@ async function merge(myArray, p, mid, r, graph)
         var k = p;
      
         while (i < n1 && j < n2) {
-            await sleep(10);
+            await sleep(5);
             graph[p + i].style.setProperty('background-color', 'black');
             graph[mid + 1 + j].style.setProperty('background-color', 'black');
             if (L[i] <= R[j]) {
-                await sleep(10);
                 myArray[k] = L[i];
                 graph[k].style.setProperty('height', myArray[k] + 'px');
-                graph[k].style.setProperty('background-color', 'lightBlue');
-                graph[mid + 1 + j].style.setProperty('background-color', 'lightBlue');
                 i++;
             }
             else {
-                await sleep(10);
                 myArray[k] = R[j];
                 graph[k].style.setProperty('height', myArray[k] + 'px');
-                graph[k].style.setProperty('background-color', 'lightBlue');
-                graph[mid + 1 + j].style.setProperty('heght', L[i] + 'px');
-                graph[mid + 1 + j].style.setProperty('background-color', 'lightBlue');
                 j++;
             }
             k++;
@@ -73,11 +70,9 @@ async function merge(myArray, p, mid, r, graph)
         // Copy the remaining elements of
         // L[], if there are any
         while (i < n1) {
-            await sleep(10);
+            await sleep(5);
             myArray[k] = L[i];
             graph[k].style.setProperty('height', L[i] + 'px');
-            graph[k].style.setProperty('background-color', 'lightBlue');
-            graph[p + i].style.setProperty('background-color', 'lightBlue');
             i++;
             k++;
         }
@@ -85,54 +80,12 @@ async function merge(myArray, p, mid, r, graph)
         // Copy the remaining elements of
         // R[], if there are any
         while (j < n2) {
-            await sleep(10);
+            await sleep(5);
             myArray[k] = R[j];
             graph[k].style.setProperty('height', R[j] + 'px');
-            graph[k].style.setProperty('background-color', 'lightBlue');
-            graph[mid + 1 + j].style.setProperty('background-color', 'lightBlue');
             j++;
             k++;
         }
-}
-
-function animateGraph(L, R, p, graph) {
-    console.log(copyRemainingR);
-    console.log( copyRemainingL);
-     // Initial index of first subarray
-     var i = 0;
- 
-     // Initial index of second subarray
-     var j = 0;
-  
-     // Initial index of merged subarray
-     var k = p;
-    while (i < L.length && j < R.length) {
-        if (L[i] <= R[j]) {
-            graph[k].style.setProperty('height', L[i] + 'px');
-            i++;
-        }
-        else {
-            graph[k].style.setProperty('height', R[j] + 'px');
-            j++;
-        }
-        k++;
-    }
- 
-    // Copy the remaining elements of
-    // L[], if there are any
-    while (i < L.length) {
-        graph[k].style.setProperty('height', L[i] + 'px');
-        i++;
-        k++;
-    }
- 
-    // Copy the remaining elements of
-    // R[], if there are any
-    while (j < R.length) {
-        graph[k].style.setProperty('height', R[j] + 'px');
-        j++;
-        k++;
-    }
 }
 
 function sleep(ms) {

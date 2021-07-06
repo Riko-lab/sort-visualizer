@@ -85,5 +85,5 @@ function sort(myArray, arrayLength, graph) {
             noSwap = true;
         }
 
-    }, 50);
+    }, 5);
 }

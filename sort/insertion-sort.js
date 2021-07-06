@@ -92,5 +92,5 @@ function sort(myArray, arrayLength, graph) {
             alreadySorted = true;
         }
 
-    }, 50);
+    }, 0);
 }

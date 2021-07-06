@@ -112,7 +112,7 @@ function sort(arrayLength, myArray, graph) {
         else {
             comparedValue++;
         }
-    }, 50);
+    }, 0);
 }
 
 // graphic swap values
