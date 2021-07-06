@@ -20,3 +20,11 @@ I explored <b>Asynchronous JavaScript</b> using:
 * Promises (async, await)
 
 This project helped me to understand how these algorithms work and to get familiar with asynchronous Javascript.
+
+### How to use
+
+You can download the repository locally and run the html file with a local server.
+
+#### Improvments
+
+Graphic, code efficiency
