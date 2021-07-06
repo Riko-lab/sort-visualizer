@@ -1,0 +1,61 @@
+:root {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(255, 255, 255);
+    --graphBar: #c53030ab;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#graph-cnt {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 20px 0 20px;
+    border-bottom: 3px solid black;
+}
+
+.graph-bar {
+    width: 1%;
+    background-color: var(--graphBar);
+    border-top: 1px solid white;
+}
+
+.btn-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 20px 40px 20px;
+}
+.btn-container #create {
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+button {
+    padding: 10px 15px;
+    border-radius: .3em .3em;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+button:not(:last-child) {
+    margin-right: 20px;
+}
+button:not(:first-child) {
+    background-color: rgb(28, 83, 83);
+    color: white;
+}
+#create {
+    background-color: rgb(119, 169, 216);
+    color: rgb(0, 0, 0);
+}
+
