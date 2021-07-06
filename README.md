@@ -7,13 +7,13 @@ Sorting algorithms visualizer:
   <li>Merge Sort</li>
 </ul>
 
-##Technologies
+## Technologies
 
 * HTML
 * CSS
 * Vanilla JavaScript
 
-###What I learned
+### What I learned
 I explored <b>Asynchronous JavaScript</b> using:
 
 * Timeouts and intervals
